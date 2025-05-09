@@ -18,22 +18,22 @@ lscreensaver is a tiny, standalone screen-blanking daemon for Linux that works u
 ```
 # Installation (from source)
 
-    Install dependencies:
+Install dependencies:
 
     sudo pacman -S libinput sdl2
 
-    Clone or download this repo:
+Clone or download this repo:
 
     git clone https://github.com/may-gay/lscreensaver.git
     cd lscreensaver
 
-    Either makepkg it or build it
+Either makepkg it or build it
 
-    Makepkg:
+Makepkg:
 
     makepkg -si
 
-    Build:
+Build:
 
     gcc main.c -o lscreensaver 
     $(pkg-config --cflags --libs libudev libinput sdl2) -D_GNU_SOURCE
@@ -55,6 +55,9 @@ Copy or create ~/.config/lscreensaver/config with two settings:
 Just run:
 
     lscreensaver
+or to lock immediately
+
+    lscreensaver -l
 
 You can run it in the foreground, or daemonize it, e.g. via a systemd user service:
 ```

@@ -1,4 +1,4 @@
-# Maintainer: may https://github.com/may-gay
+# Maintainer: puppyslut <may@may.com>
 pkgname=lscreensaver
 pkgver=0.1
 pkgrel=1

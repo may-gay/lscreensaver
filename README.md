@@ -8,6 +8,7 @@ lscreensaver is a tiny, standalone screen-blanking daemon for Linux that works u
 ```
 • Configurable idle timeout (in seconds).
 • Exempt app list: if any listed process is running, the screen will not blank.
+• Running with "-l" flag blanks immediately, ignoring exempt app list.
 ```
 # Requirements
 ```
@@ -26,12 +27,16 @@ lscreensaver is a tiny, standalone screen-blanking daemon for Linux that works u
     git clone https://github.com/may-gay/lscreensaver.git
     cd lscreensaver
 
+    Either makepkg it or build it
+
+    Makepkg:
+
+    makepkg -si
+
     Build:
 
     gcc main.c -o lscreensaver 
     $(pkg-config --cflags --libs libudev libinput sdl2) -D_GNU_SOURCE
-
-    Install somewhere on your $PATH:
 
     sudo install -Dm755 lscreensaver /usr/local/bin/lscreensaver
 
@@ -66,4 +71,14 @@ WantedBy=default.target
 Enable & start:
 ```
 systemctl --user enable --now lscreensaver.service
+```
+
+# Windowrules for Hyprland
+```
+# lscreensaver windows
+windowrulev2 = fullscreen:true,title:^(lscreensaver-.*)$
+windowrulev2 = monitor 0,title:^(lscreensaver-0)$
+windowrulev2 = monitor 1,title:^(lscreensaver-1)$
+windowrulev2 = monitor 2,title:^(lscreensaver-2)$
+# Add more as needed for additional monitors
 ```

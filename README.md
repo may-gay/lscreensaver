@@ -16,6 +16,9 @@ lscreensaver is a tiny, standalone screen-blanking daemon for Linux that works u
 • SDL2
 • membership of the “input” group (so libinput can read /dev/input/event*).
 ```
+# Installation (aur)
+    sudo pacman -S lscreensaver
+
 # Installation (from source)
 
 Install dependencies:
